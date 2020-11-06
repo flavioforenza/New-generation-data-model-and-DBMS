@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Visita xsi:noNamespaceSchemaLocation="schema.xsd" Id="string" Evento="string" Giorno="1979-10-26" Entrata="13:39:54.45" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">  
+    
+    <!-- Nella convalida di tale documento XML si vedrà che verrà restituito un 
+        errore in quanto negli Slots compare uno slot avento lo stesso id 
+        (sl125) duplicato-->
+    
+   <Slots>
+    <Slot id="sl123">
+      <Nome>string</Nome>
+      <Tipo>standard</Tipo>
+      <TipoProdottiEsposti>string</TipoProdottiEsposti>
+      <TipoProdottiEsposti>string</TipoProdottiEsposti>
+      <TipoProdottiEsposti>string</TipoProdottiEsposti>
+      <TipoProdottiEsposti>string</TipoProdottiEsposti>
+      <TipoProdottiEsposti>string</TipoProdottiEsposti>
+      <NumPassaggi>4694</NumPassaggi>
+      <NomeAzineda>string</NomeAzineda>
+      <Voto>MiPiace</Voto>
+    </Slot>
+    <Slot id="sl124">
+      <Nome>string</Nome>
+      <Tipo>deluxe</Tipo>
+      <TipoProdottiEsposti>string</TipoProdottiEsposti>
+      <NumPassaggi>-3878</NumPassaggi>
+      <NomeAzineda>string</NomeAzineda>
+      <Voto>MiPiace</Voto>
+    </Slot>
+    <Slot id="sl125">
+      <Nome>string</Nome>
+      <Tipo>standard</Tipo>
+      <TipoProdottiEsposti>string</TipoProdottiEsposti>
+      <NumPassaggi>-1497</NumPassaggi>
+      <NomeAzineda>string</NomeAzineda>
+      <Voto>Indifferente</Voto>
+    </Slot>
+    <Slot id="sl125">
+      <Nome>string</Nome>
+      <Tipo>standard</Tipo>
+      <TipoProdottiEsposti>string</TipoProdottiEsposti>
+      <NumPassaggi>-1497</NumPassaggi>
+      <NomeAzineda>string</NomeAzineda>
+      <Voto>Indifferente</Voto>
+    </Slot>
+  </Slots>
+  <Percorso>
+    <Slot ref="sl123">
+      <OraEntrata>11:11:13.55</OraEntrata>
+      <OraUscita>00:21:01.71</OraUscita>
+      <TempoTrascorso>07:53:59.23</TempoTrascorso>
+    </Slot>
+    <Slot ref="sl124">
+      <OraEntrata>16:00:47.63</OraEntrata>
+      <OraUscita>05:01:07.25</OraUscita>
+      <TempoTrascorso>07:53:59.23</TempoTrascorso>
+    </Slot>
+  </Percorso>
+</Visita>
+

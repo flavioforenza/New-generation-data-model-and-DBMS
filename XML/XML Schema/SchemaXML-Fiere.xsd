@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"> 
+    
+    <xsd:complexType name="tSlot">
+        <xsd:sequence>
+                <xsd:element name="Nome" type="xsd:string"/>
+                <xsd:element name="Tipo">
+                        <xsd:simpleType>
+                            <xsd:restriction base="xsd:string">
+                                <xsd:enumeration value="standard"/>
+                                <xsd:enumeration value="deluxe"/>
+                            </xsd:restriction>
+                        </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="TipoProdottiEsposti" type="xsd:string" maxOccurs="unbounded"/>
+                <xsd:element name="NumPassaggi" type="xsd:integer"/>
+                <xsd:element name="NomeAzineda" type="xsd:string"/>
+                <xsd:element name="Voto" minOccurs="0" maxOccurs="1">
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:enumeration value="MiPiace"/>
+                            <xsd:enumeration value="NonMiPiace"/>
+                            <xsd:enumeration value="Indifferente"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+        </xsd:sequence>
+            <xsd:attribute name="id" type="xsd:string" use="required"/>        
+    </xsd:complexType>
+    
+    <xsd:complexType name="tPercorso">
+        <xsd:sequence>
+            <xsd:element name="Slot" maxOccurs="unbounded">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name = "OraEntrata" type="xsd:time"/>
+                        <xsd:element name = "OraUscita" type="xsd:time"/>
+                        <xsd:element name = "TempoTrascorso" type="xsd:time"/> 
+                    </xsd:sequence>
+                    <xsd:attribute name="ref" type="xsd:string" use="required"/>
+                </xsd:complexType>
+            </xsd:element> 
+        </xsd:sequence>      
+    </xsd:complexType>
+
+    <xsd:element name="Visita">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="Slots">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="Slot" type="tSlot" 
+                            minOccurs="0" maxOccurs="unbounded"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="Percorso" type="tPercorso" minOccurs="0"/>
+            </xsd:sequence>
+            <xsd:attribute name="Id" type="xsd:string" use="required"/>
+            <xsd:attribute name="Evento" type="xsd:string" use="required"/>
+            <xsd:attribute name="Giorno" type="xsd:date" use="required"/>
+            <xsd:attribute name="Entrata" type="xsd:time" use="required"/>
+        </xsd:complexType>
+        <xsd:unique name="unique-SlotId">
+                    <xsd:selector xpath="Slots/Slot"/>
+                    <xsd:field xpath="@id"/>
+        </xsd:unique>
+        <xsd:keyref name="aKeyRef" refer="unique-SlotId">
+            <xsd:selector xpath="Percorso/Slot" />
+            <xsd:field xpath="@ref"/>
+        </xsd:keyref>
+    </xsd:element>
+    
+</xsd:schema>
+
+

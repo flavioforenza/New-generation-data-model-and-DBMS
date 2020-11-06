@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Visita xsi:noNamespaceSchemaLocation="schema.xsd" Id="1234" Evento="Misto" 
+        Giorno="2001-10-05" Entrata="12:28:30.68" 
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   
+    <!--Esempio di documento XML valido per lo schema definito-->
+    
+   <Slots>
+    <Slot id="sl123">
+      <Nome>Tech</Nome>
+      <Tipo>standard</Tipo>
+      <TipoProdottiEsposti>Telefonia</TipoProdottiEsposti>
+      <TipoProdottiEsposti>TV</TipoProdottiEsposti>
+      <TipoProdottiEsposti>Audio</TipoProdottiEsposti>
+      <NumPassaggi>46</NumPassaggi>
+      <NomeAzineda>Sony</NomeAzineda>
+      <Voto>MiPiace</Voto>
+    </Slot>
+    <Slot id="sl124">
+      <Nome>Bonta</Nome>
+      <Tipo>deluxe</Tipo>
+      <TipoProdottiEsposti>Alimentari</TipoProdottiEsposti>
+      <NumPassaggi>38</NumPassaggi>
+      <NomeAzineda>Esselunga</NomeAzineda>
+      <Voto>MiPiace</Voto>
+    </Slot>
+    <Slot id="sl125">
+      <Nome>Auto</Nome>
+      <Tipo>standard</Tipo>
+      <TipoProdottiEsposti>Autoveicoli</TipoProdottiEsposti>
+      <NumPassaggi>149</NumPassaggi>
+      <NomeAzineda>Ferrari</NomeAzineda>
+      <Voto>Indifferente</Voto>
+    </Slot>
+  </Slots>
+  <Percorso>
+    <Slot ref="sl123">
+      <OraEntrata>11:10:00.00</OraEntrata>
+      <OraUscita>13:20:00.00</OraUscita>
+      <TempoTrascorso>02:10:00.00</TempoTrascorso>
+    </Slot>
+    <Slot ref="sl124">
+      <OraEntrata>16:59:00.00</OraEntrata>
+      <OraUscita>17:13:00.00</OraUscita>
+      <TempoTrascorso>00:14:00.00</TempoTrascorso>
+    </Slot>
+  </Percorso>
+</Visita>
+
